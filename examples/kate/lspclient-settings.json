@@ -1,0 +1,74 @@
+{
+    "servers": {
+        "python": {
+            "command": ["/home/owata/llmsp/.venv/bin/llmsp"],
+            "rootIndicationFileNames": ["pyproject.toml", ".git"],
+            "highlightingModeRegex": "^Python$",
+            "initializationOptions": {
+                "backend": "ollama",
+                "model": "qwen2.5-coder:0.5b",
+                "model_family": "qwen",
+                "request_timeout_ms": 30000,
+                "max_tokens": 128,
+                "temperature": 0.1,
+                "debounce_ms": 200,
+                "multiline": "auto",
+                "context": {
+                    "max_prompt_tokens": 1536,
+                    "cross_file": true,
+                    "retrieval": "jaccard",
+                    "max_snippets": 4,
+                    "structural": true
+                }
+            }
+        },
+        "javascript": {
+            "command": ["/home/owata/llmsp/.venv/bin/llmsp"],
+            "rootIndicationFileNames": ["package.json", ".git"],
+            "highlightingModeRegex": "^JavaScript",
+            "initializationOptions": {
+                "backend": "ollama",
+                "model": "qwen2.5-coder:0.5b",
+                "model_family": "qwen",
+                "request_timeout_ms": 30000,
+                "context": { "cross_file": true, "structural": true }
+            }
+        },
+        "typescript": {
+            "command": ["/home/owata/llmsp/.venv/bin/llmsp"],
+            "rootIndicationFileNames": ["package.json", ".git"],
+            "highlightingModeRegex": "^TypeScript",
+            "initializationOptions": {
+                "backend": "ollama",
+                "model": "qwen2.5-coder:0.5b",
+                "model_family": "qwen",
+                "request_timeout_ms": 30000,
+                "context": { "cross_file": true, "structural": true }
+            }
+        },
+        "rust": {
+            "command": ["/home/owata/llmsp/.venv/bin/llmsp"],
+            "rootIndicationFileNames": ["Cargo.toml", ".git"],
+            "highlightingModeRegex": "^Rust$",
+            "initializationOptions": {
+                "backend": "ollama",
+                "model": "qwen2.5-coder:0.5b",
+                "model_family": "qwen",
+                "request_timeout_ms": 30000,
+                "context": { "cross_file": true, "structural": true }
+            }
+        },
+        "go": {
+            "command": ["/home/owata/llmsp/.venv/bin/llmsp"],
+            "rootIndicationFileNames": ["go.mod", ".git"],
+            "highlightingModeRegex": "^Go$",
+            "initializationOptions": {
+                "backend": "ollama",
+                "model": "qwen2.5-coder:0.5b",
+                "model_family": "qwen",
+                "request_timeout_ms": 30000,
+                "context": { "cross_file": true, "structural": true }
+            }
+        }
+    }
+}

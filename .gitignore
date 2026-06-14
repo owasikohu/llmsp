@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+*.egg
+
+# Virtualenvs
+.venv/
+venv/
+env/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node / VS Code extension build artifacts
+node_modules/
+editors/vscode/out/
+*.vsix
+
+# Local editor settings & scratch files
+.vscode/
+scratch.py
+scratch/
+
+# Editor / OS
+.DS_Store
+*.swp
