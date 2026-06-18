@@ -11,7 +11,10 @@ structural single/multi-line decision — to lift completion accuracy.
 
 It is **editor-agnostic**: it implements both the standard `textDocument/completion`
 popup (works in any LSP client, no extension required) and LSP 3.18
-`textDocument/inlineCompletion` ghost text (VS Code, Neovim 0.12+).
+`textDocument/inlineCompletion` ghost text (Neovim 0.12+). For **VS Code**, a
+separate native extension — [**ghostCS**](https://github.com/owasikohu/ghostCS) —
+ports the same context engineering into the editor host directly (no language
+server), which is the most stable path there.
 
 ## How it works
 
@@ -65,12 +68,14 @@ llmsp                              # speaks LSP over stdio
 
 | Editor | Setup | Ghost text |
 |---|---|---|
-| **VS Code** (incl. Remote-WSL) | build & install the extension in [editors/vscode/](editors/vscode/) | ✅ |
-| **Neovim** 0.11+ | source [examples/nvim/llmsp.lua](examples/nvim/llmsp.lua) (no plugins) | ✅ (0.12+) |
-| **Kate** | paste [examples/kate/lspclient-settings.json](examples/kate/lspclient-settings.json) into LSP Client settings | popup only |
+| **VS Code** (incl. Remote-WSL) | install the standalone **ghostCS** extension ([github.com/owasikohu/ghostCS](https://github.com/owasikohu/ghostCS)) — no server, no Python | ✅ |
+| **Neovim** 0.11+ | source [examples/nvim/llmsp.lua](examples/nvim/llmsp.lua) (no plugins) — uses the Python LSP | ✅ (0.12+) |
+| **Kate** | paste [examples/kate/lspclient-settings.json](examples/kate/lspclient-settings.json) into LSP Client settings — uses the Python LSP | popup only |
 | any LSP client | point it at the `llmsp` command | popup; ghost text if supported |
 
-See each directory's README for exact steps.
+VS Code is served by the standalone [ghostCS](https://github.com/owasikohu/ghostCS)
+extension, which reimplements the context pipeline natively for stability; the other editors use
+the Python `llmsp` language server. See each directory's README for exact steps.
 
 ## Configuration
 

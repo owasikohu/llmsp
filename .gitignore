@@ -19,9 +19,8 @@ env/
 .coverage
 htmlcov/
 
-# Node / VS Code extension build artifacts
+# Node build artifacts
 node_modules/
-editors/vscode/out/
 *.vsix
 
 # Local editor settings & scratch files
